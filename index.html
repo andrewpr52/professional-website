@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Andrew Rodeghero">
+    <title>Andrew Rodeghero</title>
+    <link rel="stylesheet" href="rodeghero.css" type="text/css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	// This code for smooth scrolling is from W3Schools at https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_animate_smoothscroll
+		$(document).ready(function(){
+		  // Add smooth scrolling to all links
+		  $("a").on('click', function(event) {
+
+			// Make sure this.hash has a value before overriding default behavior
+			if (this.hash !== "") {
+			  // Prevent default anchor click behavior
+			  event.preventDefault();
+
+			  // Store hash
+			  var hash = this.hash;
+
+			  // Using jQuery's animate() method to add smooth page scroll
+			  // The optional number (500) specifies the number of milliseconds it takes to scroll to the specified area
+			  $('html, body').animate({
+				scrollTop: $(hash).offset().top
+			  }, 500, function(){
+		   
+				// Add hash (#) to URL when done scrolling (default click behavior)
+				window.location.hash = hash;
+			  });
+			} // End if
+		  });
+		});
+	</script>
+	
+	<script>
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > 395) {
+				$('#nav_bar').addClass('stuck');
+			} else {
+				$('#nav_bar').removeClass('stuck');
+			}
+		});
+	</script>
+	
+	<style>
+		p a:link {color: #e03e3e;}
+		p a:visited {color: #931111;}
+		p a:visited:hover {color: #e03e3e;}
+		
+		body, html, .pastwork {
+			height: 100%;
+		}
+
+		section {
+			min-height: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="titlebanner">
+		<img src="images/titlebackground.jpg" alt="Melbourne Background">
+		<div class="title">Andrew Rodeghero</div>
+		<div class="subtitle">Programming | Web Development | App Design</div>
+	</div>
+	
+	<div class="page_contents"> 
+		<div class="nav_wrapper">
+			<nav id="nav_bar">
+				<ul>
+					<li><a class = "active"
+						href="#about"><b>About</b></a></li>
+					<li><a href="#past-work"><b>Past Work</b></a></li>
+					<li><a href="#contact"><b>Contact</b></a></li>
+				</ul>
+			</nav>
+		</div>
+	
+		<div class="about" id="about">
+			<h1>About</h1>
+			<p>I am currently pursuing a Bachelor of Science in Computer Science at Truman State University. I also studied abroad at Macquarie University in Sydney, Australia
+			during my Spring 2017 semester. I have taken courses in web development, databases, programming languages, object oriented programming/design, and others.</p>
+			<p>My passion for technology extends back to a young age, but my passion for computer science goes back to my senior year in high school, where I took an introduction
+			computer science course and decided then that I wanted to do this as a career.</p>
+			<p>There are many different areas that computer science branches off into, and I have recently found that I have really enjoyed the areas that include some aspect of UI
+			design, such as web development, mobile application development, etc. That’s what this site is for; to showcase some of the things that I have created.</p>
+			<p>If you would like to know more about me or my experience, feel free to contact me right away!</p>
+			<br><br><br>
+		</div>
+		
+		<div class="pastwork" id="past-work">
+			<h1>Past Work</h1>
+			
+			<h2>Websites</h2>
+			<p>This website: Created using HTML, CSS, and JavaScript.</p>
+			<p><a href="http://www.arodsg.com" target="_blank">arodSG.com</a>: Another personal website of mine, based around my YouTube channel. Created using HTML, CSS, and JavaScript.</p>
+			<p><a href="" target=" ">Psst!</a>: This was for a project that I had in my Web Development class while I was studying abroad in Australia.
+			We had to design a Twitter-like website which was fully functional and allowed for different users to login, create new posts, search for specific users or hashtags,
+			view a specific user's posts, etc. Created using HTML, CSS, Python, and SQLite.</p>
+			
+			<br>
+			
+			<h2>Application Designs</h2>
+			<p>All application designs, including all assets used within the designs, were created by me using Photoshop.</p>
+			<p>Click on an image to enlarge and see more info.</p>
+			<p>TODO: add ability to click on an image and view in an enlarged gallery</p>
+			<div class="image_container">
+				<p><a href="#weather"><img src="images/apps/weather.png" alt="Weather App Mockup"/></a></p>
+			</div>
+			<br><br><br>
+		</div>
+		
+		<div class="contact" id="contact">
+			<h1>Contact</h1>
+		
+			<p>If you have any questions about me or any of my previous work, please feel free to contact me!</p>
+			<p>Email: andrewpr52@gmail.com</p>
+			<p>TODO: email contact form</p>
+		</div>
+	</div>
+</body>
+
+</html>
