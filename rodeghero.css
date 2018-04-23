@@ -185,3 +185,17 @@ li a:target {
 	height: 15%;
 	width: 15%;
 }
+
+.contact_container {
+	border-radius: 5px;
+	background-color: #bbbbbb;
+	width: 60%;
+	padding: 20px;
+}
+
+input[type=text], textarea {
+	width: 96%;
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}

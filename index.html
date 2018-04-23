@@ -100,9 +100,7 @@
 			<p><a href="" target=" ">Psst!</a>: This was for a project that I had in my Web Development class while I was studying abroad in Australia.
 			We had to design a Twitter-like website which was fully functional and allowed for different users to login, create new posts, search for specific users or hashtags,
 			view a specific user's posts, etc. Created using HTML, CSS, Python, and SQLite.</p>
-			
 			<br>
-			
 			<h2>Application Designs</h2>
 			<p>All application designs, including all assets used within the designs, were created by me using Photoshop.</p>
 			<p>Click on an image to enlarge and see more info.</p>
@@ -117,9 +115,23 @@
 			<h1>Contact</h1>
 		
 			<p>If you have any questions about me or any of my previous work, please feel free to contact me!</p>
-			<p>Email: andrewpr52@gmail.com</p>
-			<p>TODO: email contact form</p>
+			<br><br>
+			<div class="contact_container">
+				<form action="/form_submit.php">
+					<label for="from_name">Name</label>
+					<input type="text" id="from_name" name="from_name" placeholder="Name">
+					<label for="from_email">Email</label>
+					<input type="text" id="from_email" name="from_email" placeholder="Your email">
+					<label for="subject">Subject</label>
+					<input type="text" id="subject" name="subject" placeholder="Subject">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" placeholder="Name" style="height:100px"></textarea>
+					<input type="submit" value="Submit">
+				</form>
+			</div>
 		</div>
+		<br><br>
+		
 	</div>
 </body>
 
