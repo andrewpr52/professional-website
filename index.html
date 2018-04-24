@@ -36,6 +36,7 @@
 	</script>
 	
 	<script>
+    // Sticks the nav bar to the top of the window once it is scrolled past.
 		$(window).scroll(function() {
 			if ($(window).scrollTop() > 395) {
 				$('#nav_bar').addClass('stuck');
@@ -44,6 +45,47 @@
 			}
 		});
 	</script>
+    
+    <script>
+    // Handles the functionality of the lightbox containing the app mockup images
+    // This code is from W3Schools at https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_lightbox
+        function openModal() {
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+    </script>
 	
 	<style>
 		p a:link {color: #e03e3e;}
@@ -90,7 +132,7 @@
 			<p>If you would like to know more about me or my experience, feel free to contact me right away!</p>
 			<br><br><br>
 		</div>
-		
+        
 		<div class="pastwork" id="past-work">
 			<h1>Past Work</h1>
 			
@@ -104,20 +146,47 @@
 			<h2>Application Designs</h2>
 			<p>All application designs, including all assets used within the designs, were created by me using Photoshop.</p>
 			<p>Click on an image to enlarge and see more info.</p>
-			<p>TODO: add ability to click on an image and view in an enlarged gallery</p>
+            
 			<div class="image_container">
-				<p><a href="#weather"><img src="images/apps/weather.png" alt="Weather App Mockup"/></a></p>
-			</div>
+                <div class="row">
+                  <div class="column">
+                    <img src="images/apps/weather.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                  </div>
+                </div>
+
+                <div id="myModal" class="modal">
+                  <span class="close cursor" onclick="closeModal()">&times;</span>
+                  <div class="modal-content">
+
+                    <div class="mySlides">
+                      <div class="numbertext">1 / 1</div>
+                      <img src="images/apps/weather.png">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <div class="caption-container">
+                      <p id="caption"></p>
+                    </div>
+
+                    <div class="column">
+                      <img class="demo cursor" src="images/apps/weather.png" style="width:100%" onclick="currentSlide(1)" alt="Weather App Mockup">
+                    </div>
+                  </div>
+                </div>
+            </div>
 			<br><br><br>
 		</div>
 		
 		<div class="contact" id="contact">
 			<h1>Contact</h1>
-		
+
 			<p>If you have any questions about me or any of my previous work, please feel free to contact me!</p>
 			<br><br>
 			<div class="contact_container">
-				<form action="/form_submit.php">
+				<form method="post" action="https://formspree.io/andrewpr52@gmail.com">
+                    <input type="hidden" name="_next" value="http://localhost:8666/professional-website/confirm.html">
 					<label for="from_name">Name</label>
 					<input type="text" id="from_name" name="from_name" placeholder="Name">
 					<label for="from_email">Email</label>
@@ -125,13 +194,13 @@
 					<label for="subject">Subject</label>
 					<input type="text" id="subject" name="subject" placeholder="Subject">
 					<label for="message">Message</label>
-					<textarea id="message" name="message" placeholder="Name" style="height:100px"></textarea>
+					<textarea id="message" name="message" placeholder="Type your message here..." style="height:100px"></textarea>
 					<input type="submit" value="Submit">
 				</form>
 			</div>
 		</div>
 		<br><br>
-		
+
 	</div>
 </body>
 
