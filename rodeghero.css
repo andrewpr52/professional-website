@@ -3,6 +3,7 @@ html {
     color: black;
 	margin: 0;
 	padding: 0;
+	overflow-x: hidden;
 }
 
 @font-face {
@@ -20,22 +21,25 @@ body {
 .page_contents {
 	margin: 0 auto;
 	position: relative;
-	top: 385px;
+	top: 41.5%;
 	background-color: #dddddd;
 }
 
 .titlebanner {
-	margin: 0px;
-	position: fixed;
+	position: absolute;
+	left: 50%;
+	width: 1536px;
+	margin-left: -768px;
 }
 .titlebanner img {
-	width: 100%;
+	margin: 0 auto;
+	height: 42vh;
 	opacity: 0.85;
 }
 .title {
 	width: 75%;
 	color: white;
-	font-size: 48pt;
+	font-size: 4vw;
 	text-align: center;
 	padding-top: 20px;
 	position: absolute;
@@ -45,7 +49,7 @@ body {
 }
 .subtitle {
 	color: white;
-	font-size: 18pt;
+	font-size: 1.5vw;
 	text-align: center;
 	position: absolute;
 	top: 55%;
